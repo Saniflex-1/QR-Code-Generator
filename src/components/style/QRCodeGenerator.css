@@ -66,3 +66,17 @@
     background-color: #0056b3;
   }
   
+
+  .powered{
+    text-align: center;
+  }
+
+  .powered a{
+    text-decoration: none;
+    color: #0056b3;
+  }
+
+  .em{
+    text-align: center;
+    margin-bottom: 10px;
+  }

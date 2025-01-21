@@ -20,7 +20,8 @@ const QRCodeGenerator = () => {
   };
 
   return (
-    <div className="qr-container">
+    <div className="codeGen">
+             <div className="qr-container">
       <h2 className="qr-title">QR Code Generator</h2>
       
       {/* Text Input to modify QR code content */}
@@ -57,6 +58,11 @@ const QRCodeGenerator = () => {
       <button className="download-btn" onClick={downloadQRCode}>
         Download QR Code
       </button>
+    </div>
+
+    <div className="powered">
+        <p>Powered by <a href="https://saniflex.vercel.app/" target="_Blank">LetCodeLead</a></p>
+    </div>
     </div>
   );
 };
