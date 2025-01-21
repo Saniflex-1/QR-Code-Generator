@@ -3,7 +3,7 @@ import QRCode from "react-qr-code";
 import html2canvas from "html2canvas";
 
 const QRCodeGenerator = () => {
-  const [text, setText] = useState("Hello, QR Code!");
+  const [text, setText] = useState("linkedin.com/company/letcodelead");
   const [fgColor, setFgColor] = useState("#000000"); // Default black
   const [bgColor, setBgColor] = useState("#ffffff"); // Default white
   const qrCodeRef = useRef();
@@ -33,25 +33,32 @@ const QRCodeGenerator = () => {
         placeholder="Enter text to encode"
       />
       
-      {/* Color pickers for QR code foreground and background */}
-      <div className="color-picker-container">
+     
+
+      {/* Displaying the QR Code with updated colors */}
+      <div className="qr-code" ref={qrCodeRef}>
+        <QRCode value={text} fgColor={fgColor} bgColor={bgColor} />
+      </div>
+
+       {/* Color pickers for QR code foreground and background */}
+       <div className="color-picker-container">
+        <div className="pic">
         <label>Foreground Color: </label>
         <input
           type="color"
           value={fgColor}
           onChange={(e) => setFgColor(e.target.value)}
         />
+        </div>
+        
+        <div className="pic">
         <label>Background Color: </label>
         <input
           type="color"
           value={bgColor}
           onChange={(e) => setBgColor(e.target.value)}
         />
-      </div>
-
-      {/* Displaying the QR Code with updated colors */}
-      <div className="qr-code" ref={qrCodeRef}>
-        <QRCode value={text} fgColor={fgColor} bgColor={bgColor} />
+        </div>
       </div>
 
       {/* Download Button */}
